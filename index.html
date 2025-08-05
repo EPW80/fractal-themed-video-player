@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fractal</title>
+    <meta
+      name="description"
+      content="Immerse yourself in mesmerizing fractal visualizations featuring dynamic color patterns and mathematical beauty in stunning HD quality."
+    />
+
+    <!-- Open Graph tags for social sharing -->
+    <meta
+      property="og:title"
+      content="Fractal Color Patterns - Mathematical Art Visualization"
+    />
+    <meta
+      property="og:description"
+      content="Immerse yourself in mesmerizing fractal visualizations featuring dynamic color patterns and mathematical beauty."
+    />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:url" content="https://example.com/fractal-patterns" />
+    <meta
+      property="og:image"
+      content="https://example.com/fractal-thumbnail.png"
+    />
+    <meta property="og:video" content="https://example.com/fractal.mp4" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Fractal Color Patterns",
+        "description": "Immerse yourself in mesmerizing fractal visualizations featuring dynamic color patterns and mathematical beauty in stunning HD quality.",
+        "thumbnailUrl": "https://example.com/fractal-thumbnail.jpg",
+        "uploadDate": "2024-01-15T08:00:00+00:00",
+        "duration": "PT8M45S",
+        "contentUrl": "https://example.com/fractal.mp4",
+        "embedUrl": "https://example.com/embed/fractal-patterns",
+        "interactionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": { "@type": "WatchAction" },
+          "userInteractionCount": 8756
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-content">
+        <div class="logo">Fractal</div>
+        <nav>
+          <button class="btn btn-secondary">Share Block</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="video-section">
+        <div class="video-wrapper">
+          <div class="loading-spinner" id="loadingSpinner"></div>
+          <video
+            id="mainVideo"
+            poster="assets/images/fractal.png"
+            preload="metadata"
+          >
+            <source src="assets/images/fractal.mp4" type="video/mp4" />
+            <track
+              kind="captions"
+              src="captions.vtt"
+              srclang="en"
+              label="English"
+              default
+            />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="video-controls" id="videoControls">
+            <div class="controls-inner">
+              <button
+                class="play-pause-btn"
+                id="playPauseBtn"
+                aria-label="Play video"
+              >
+                <span id="playIcon">▶</span>
+                <span id="pauseIcon" style="display: none">⏸</span>
+              </button>
+              <div
+                class="progress-bar"
+                id="progressBar"
+                role="progressbar"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div class="progress-filled" id="progressFilled"></div>
+              </div>
+              <div class="time" id="timeDisplay">
+                <span id="currentTime">0:00</span> /
+                <span id="duration">0:00</span>
+              </div>
+              <button
+                class="fullscreen-btn"
+                id="fullscreenBtn"
+                aria-label="Enter fullscreen"
+              >
+                <span id="fullscreenIcon">⛶</span>
+                <span id="exitFullscreenIcon" style="display: none">⛷</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-info">
+        <h1 class="video-title">Fractal Color Patterns</h1>
+
+        <div class="video-meta">
+          <span>Published on January 15, 2024</span>
+          <span>•</span>
+          <span>8,756 views</span>
+          <span>•</span>
+          <span>8:45 duration</span>
+        </div>
+
+        <p class="video-description">
+          Dive deep into the mesmerizing world of fractal mathematics through
+          this stunning visual journey. Watch as complex mathematical equations
+          transform into breathtaking patterns of color and form. This video
+          showcases various fractal types including Mandelbrot sets, Julia sets,
+          and custom algorithmic patterns, each rendered with vibrant color
+          palettes that shift and evolve throughout the visualization.
+        </p>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" id="likeBtn"><span>👍</span> Like Video</button>
+          <button class="btn btn-secondary" id="shareBtn">
+            <span>�</span> Share Video
+          </button>
+        </div>
+
+        <div class="transcript-section">
+          <div class="transcript-header">
+            <h2 class="transcript-title">Block Data</h2>
+            <button class="transcript-toggle" id="transcriptToggle">
+              Show Data
+            </button>
+          </div>
+          <div class="transcript-content" id="transcriptContent">
+            <div class="transcript-text">
+              <p>
+                [BLOCK:000] Genesis fractal initialization - Mandelbrot set
+                parameters loaded into distributed rendering network.
+              </p>
+              <p>
+                [BLOCK:001] Color palette synchronization across nodes - RGB
+                values 0xFF6B6B, 0x4ECDC4, 0x45B7D1 validated via consensus.
+              </p>
+              <p>
+                [BLOCK:002] Julia set iteration parameters verified - Complex
+                plane coordinates (-0.7269 + 0.1889i) confirmed by majority
+                nodes.
+              </p>
+              <p>
+                [BLOCK:003] Zoom depth calculation distributed - Maximum
+                iteration count 1024 approved by mining nodes.
+              </p>
+              <p>
+                [BLOCK:004] Newton fractal convergence data mined - Root finding
+                algorithms validated through proof-of-work consensus.
+              </p>
+              <p>
+                [BLOCK:005] Custom algorithm hash: 0xA7F3E9B2C4D6 - Organic
+                growth patterns generated and verified by network.
+              </p>
+              <p>
+                [BLOCK:006] Final render compilation complete - Transaction
+                hash: 0x9E4A2F8B7C3D1E6F committed to immutable ledger.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/video-player.js"></script>
+  </body>
+</html>
