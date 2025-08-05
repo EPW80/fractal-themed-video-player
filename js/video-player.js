@@ -205,6 +205,42 @@ document.getElementById("likeBtn").addEventListener("click", () => {
   }
 });
 
+// Theme Toggle functionality
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector(".theme-icon");
+const themeText = themeToggle.querySelector(".theme-text");
+
+// Check for saved theme preference or default to dark mode
+const savedTheme = localStorage.getItem("theme") || "dark";
+setTheme(savedTheme);
+
+function setTheme(theme) {
+  if (theme === "light") {
+    document.body.classList.add("light-mode");
+    themeIcon.textContent = "☀️";
+    themeText.textContent = "Light";
+    themeToggle.title = "Switch to dark mode";
+  } else {
+    document.body.classList.remove("light-mode");
+    themeIcon.textContent = "🌙";
+    themeText.textContent = "Dark";
+    themeToggle.title = "Switch to light mode";
+  }
+  localStorage.setItem("theme", theme);
+}
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.body.classList.contains("light-mode") ? "light" : "dark";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+  
+  // Add a subtle animation effect
+  themeToggle.style.transform = "scale(0.95)";
+  setTimeout(() => {
+    themeToggle.style.transform = "scale(1)";
+  }, 150);
+});
+
 // Keyboard controls
 document.addEventListener("keydown", (e) => {
   if (e.target.tagName.toLowerCase() === "input") return;
