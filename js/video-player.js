@@ -9,6 +9,9 @@ const currentTimeDisplay = document.getElementById("currentTime");
 const durationDisplay = document.getElementById("duration");
 const videoControls = document.getElementById("videoControls");
 const loadingSpinner = document.getElementById("loadingSpinner");
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+const fullscreenIcon = document.getElementById("fullscreenIcon");
+const exitFullscreenIcon = document.getElementById("exitFullscreenIcon");
 
 // Format time helper
 function formatTime(seconds) {
@@ -37,6 +40,44 @@ playPauseBtn.addEventListener("click", () => {
     playIcon.style.display = "block";
     pauseIcon.style.display = "none";
     playPauseBtn.setAttribute("aria-label", "Play video");
+  }
+});
+
+// Fullscreen functionality
+function toggleFullscreen() {
+  if (!document.fullscreenElement) {
+    video
+      .requestFullscreen()
+      .then(() => {
+        fullscreenIcon.style.display = "none";
+        exitFullscreenIcon.style.display = "block";
+        fullscreenBtn.setAttribute("aria-label", "Exit fullscreen");
+      })
+      .catch((err) => {
+        console.log("Error attempting to enable fullscreen:", err);
+      });
+  } else {
+    document
+      .exitFullscreen()
+      .then(() => {
+        fullscreenIcon.style.display = "block";
+        exitFullscreenIcon.style.display = "none";
+        fullscreenBtn.setAttribute("aria-label", "Enter fullscreen");
+      })
+      .catch((err) => {
+        console.log("Error attempting to exit fullscreen:", err);
+      });
+  }
+}
+
+fullscreenBtn.addEventListener("click", toggleFullscreen);
+
+// Listen for fullscreen changes (in case user exits with ESC key)
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement) {
+    fullscreenIcon.style.display = "block";
+    exitFullscreenIcon.style.display = "none";
+    fullscreenBtn.setAttribute("aria-label", "Enter fullscreen");
   }
 });
 
@@ -80,15 +121,15 @@ videoWrapper.addEventListener("mouseleave", () => {
   }
 });
 
-// Transcript toggle
-const transcriptToggle = document.getElementById("transcriptToggle");
-const transcriptContent = document.getElementById("transcriptContent");
+// Formula toggle
+const formulaToggle = document.getElementById("formulaToggle");
+const formulaContent = document.getElementById("formulaContent");
 
-transcriptToggle.addEventListener("click", () => {
-  transcriptContent.classList.toggle("show");
-  transcriptToggle.textContent = transcriptContent.classList.contains("show")
-    ? "Hide Data"
-    : "Show Data";
+formulaToggle.addEventListener("click", () => {
+  formulaContent.classList.toggle("show");
+  formulaToggle.textContent = formulaContent.classList.contains("show")
+    ? "Hide Formulas"
+    : "Show Formulas";
 });
 
 // Header scroll effect
@@ -126,35 +167,39 @@ let likeCount = 8756; // Starting like count from metadata
 
 document.getElementById("likeBtn").addEventListener("click", () => {
   const likeBtn = document.getElementById("likeBtn");
-  
+
   if (!isLiked) {
     // Like the video
     isLiked = true;
     likeCount++;
-    likeBtn.innerHTML = '<span>❤️</span> Liked';
+    likeBtn.innerHTML = "<span>❤️</span> Liked";
     likeBtn.classList.add("liked");
-    
+
     // Update the view count display if it exists
-    const viewsElement = document.querySelector(".video-meta span:nth-child(3)");
+    const viewsElement = document.querySelector(
+      ".video-meta span:nth-child(3)"
+    );
     if (viewsElement) {
       viewsElement.textContent = `${likeCount.toLocaleString()} likes`;
     }
-    
+
     // Show feedback
     console.log("Video liked! Total likes:", likeCount);
   } else {
     // Unlike the video
     isLiked = false;
     likeCount--;
-    likeBtn.innerHTML = '<span>👍</span> Like Video';
+    likeBtn.innerHTML = "<span>👍</span> Like Video";
     likeBtn.classList.remove("liked");
-    
+
     // Update the view count display back to views
-    const viewsElement = document.querySelector(".video-meta span:nth-child(3)");
+    const viewsElement = document.querySelector(
+      ".video-meta span:nth-child(3)"
+    );
     if (viewsElement) {
       viewsElement.textContent = `${likeCount.toLocaleString()} views`;
     }
-    
+
     // Show feedback
     console.log("Video unliked! Total likes:", likeCount);
   }
@@ -183,11 +228,8 @@ document.addEventListener("keydown", (e) => {
       video.volume = Math.max(0, video.volume - 0.1);
       break;
     case "f":
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else {
-        videoWrapper.requestFullscreen();
-      }
+      e.preventDefault();
+      toggleFullscreen();
       break;
   }
 });
