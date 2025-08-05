@@ -15,15 +15,18 @@ body {
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(0,255,136,0.03) 1px, transparent 1px);
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 255, 136, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(180deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: -1;
@@ -69,7 +72,7 @@ header.scrolled {
 }
 
 .logo::before {
-  content: '⬢';
+  content: "⬢";
   position: absolute;
   left: -30px;
   top: 50%;
@@ -80,8 +83,15 @@ header.scrolled {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
-  50% { opacity: 0.7; transform: translateY(-50%) scale(1.1); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-50%) scale(1.1);
+  }
 }
 
 /* Main Content */
@@ -106,16 +116,14 @@ main {
   overflow: hidden;
   background: linear-gradient(135deg, #000a1a, #001a33);
   border-radius: 12px;
-  box-shadow: 
-    0 0 30px rgba(0, 255, 136, 0.3),
-    0 0 60px rgba(0, 212, 255, 0.2),
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3), 0 0 60px rgba(0, 212, 255, 0.2),
     inset 0 0 20px rgba(0, 0, 0, 0.5);
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 
 .video-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -128,8 +136,13 @@ main {
 }
 
 @keyframes borderGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 video {
@@ -147,7 +160,11 @@ video {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 20, 40, 0.95), rgba(0, 20, 40, 0.3));
+  background: linear-gradient(
+    to top,
+    rgba(0, 20, 40, 0.95),
+    rgba(0, 20, 40, 0.3)
+  );
   padding: 20px;
   transform: translateY(100%);
   transition: transform 0.3s ease;
@@ -167,7 +184,11 @@ video {
 }
 
 .play-pause-btn {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.2),
+    rgba(0, 212, 255, 0.2)
+  );
   border: 1px solid #00ff88;
   color: #00ff88;
   cursor: pointer;
@@ -183,7 +204,11 @@ video {
 }
 
 .play-pause-btn:hover {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.4), rgba(0, 212, 255, 0.4));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.4),
+    rgba(0, 212, 255, 0.4)
+  );
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
   transform: scale(1.1);
 }
@@ -200,24 +225,40 @@ video {
 }
 
 .progress-bar::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.1) 50%,
+    transparent 100%
+  );
   animation: scan 2s linear infinite;
 }
 
 @keyframes scan {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .progress-filled {
   height: 100%;
-  background: linear-gradient(90deg, #00ff88, #00d4ff, #ff0080, #8000ff, #00ff88);
+  background: linear-gradient(
+    90deg,
+    #00ff88,
+    #00d4ff,
+    #ff0080,
+    #8000ff,
+    #00ff88
+  );
   border-radius: 2px;
   width: 0%;
   transition: width 0.1s linear;
@@ -226,7 +267,7 @@ video {
 }
 
 .progress-filled::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -241,7 +282,7 @@ video {
   color: #00ff88;
   min-width: 100px;
   text-align: right;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
 }
 
@@ -265,7 +306,7 @@ video {
 }
 
 .video-title::before {
-  content: '⬢ ⬢ ⬢';
+  content: "⬢ ⬢ ⬢";
   position: absolute;
   top: -20px;
   left: 0;
@@ -280,7 +321,7 @@ video {
   margin-bottom: 30px;
   color: rgba(0, 255, 136, 0.7);
   font-size: 14px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .video-meta span:nth-child(odd) {
@@ -288,7 +329,7 @@ video {
 }
 
 .video-meta span:nth-child(odd)::before {
-  content: '▸';
+  content: "▸";
   margin-right: 5px;
   color: #00d4ff;
 }
@@ -306,7 +347,7 @@ video {
 }
 
 .video-description::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -334,7 +375,7 @@ video {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -342,13 +383,18 @@ video {
 }
 
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -357,7 +403,11 @@ video {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.2),
+    rgba(0, 212, 255, 0.2)
+  );
   color: #00ff88;
   border-color: #00ff88;
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
@@ -366,7 +416,11 @@ video {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 25px rgba(0, 255, 136, 0.5);
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 212, 255, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.3),
+    rgba(0, 212, 255, 0.3)
+  );
 }
 
 .btn-secondary {
@@ -383,14 +437,22 @@ video {
 
 /* Liked button state */
 .btn.liked {
-  background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(255, 107, 107, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 128, 0.2),
+    rgba(255, 107, 107, 0.2)
+  );
   color: #ff0080;
   border-color: #ff0080;
   box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
 }
 
 .btn.liked:hover {
-  background: linear-gradient(135deg, rgba(255, 0, 128, 0.3), rgba(255, 107, 107, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 128, 0.3),
+    rgba(255, 107, 107, 0.3)
+  );
   box-shadow: 0 5px 25px rgba(255, 0, 128, 0.6);
 }
 
@@ -403,7 +465,7 @@ video {
   color: #00ff88;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 14px;
   display: inline-flex;
   align-items: center;
@@ -437,8 +499,11 @@ body.light-mode {
 }
 
 body.light-mode::before {
-  background-image: 
-    linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+  background-image: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.08) 1px,
+      transparent 1px
+    ),
     linear-gradient(180deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
 }
 
@@ -564,7 +629,11 @@ body.light-mode .action-buttons .btn-secondary:hover {
 
 /* Formula Section */
 body.light-mode .formula-section {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.03), rgba(59, 130, 246, 0.03));
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.03),
+    rgba(59, 130, 246, 0.03)
+  );
   border: 2px solid rgba(30, 64, 175, 0.2);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
@@ -579,14 +648,22 @@ body.light-mode .formula-title::before {
 }
 
 body.light-mode .formula-toggle {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
   border-color: #1e40af;
   color: #1e40af;
   font-weight: 600;
 }
 
 body.light-mode .formula-toggle:hover {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(59, 130, 246, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(30, 64, 175, 0.2),
+    rgba(59, 130, 246, 0.2)
+  );
   box-shadow: 0 0 15px rgba(30, 64, 175, 0.4);
 }
 
@@ -639,7 +716,11 @@ body.light-mode .btn.liked:hover {
 
 /* Formula Section */
 .formula-section {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 212, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.05),
+    rgba(0, 212, 255, 0.05)
+  );
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 40px;
@@ -649,13 +730,18 @@ body.light-mode .btn.liked:hover {
 }
 
 .formula-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 136, 0.1) 50%,
+    transparent 100%
+  );
   animation: scan 2s linear infinite;
 }
 
@@ -670,30 +756,38 @@ body.light-mode .btn.liked:hover {
   font-size: 1.5em;
   font-weight: bold;
   color: #00ff88;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .formula-title::before {
-  content: '∑ ';
+  content: "∑ ";
   color: #00d4ff;
 }
 
 .formula-toggle {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.1),
+    rgba(0, 212, 255, 0.1)
+  );
   border: 1px solid #00ff88;
   color: #00ff88;
   padding: 8px 16px;
   border-radius: 4px;
 
   cursor: pointer;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   transition: all 0.3s ease;
 }
 
 .formula-toggle:hover {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.2),
+    rgba(0, 212, 255, 0.2)
+  );
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
@@ -727,7 +821,7 @@ body.light-mode .btn.liked:hover {
   color: #00d4ff;
   font-size: 1.1em;
   margin-bottom: 10px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -735,7 +829,7 @@ body.light-mode .btn.liked:hover {
 .equation {
   font-size: 1.2em;
   color: #00ff88;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   margin-bottom: 8px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.3);
@@ -751,7 +845,7 @@ body.light-mode .btn.liked:hover {
 .description {
   color: rgba(0, 255, 136, 0.7);
   font-size: 0.9em;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   line-height: 1.4;
 }
 
@@ -772,7 +866,7 @@ body.light-mode .btn.liked:hover {
 }
 
 .loading-spinner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -844,7 +938,7 @@ a:focus {
 
 /* Blockchain-inspired hexagon patterns */
 .video-info::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50px;
   right: -50px;
@@ -856,6 +950,11 @@ a:focus {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

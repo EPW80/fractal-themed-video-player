@@ -230,10 +230,12 @@ function setTheme(theme) {
 }
 
 themeToggle.addEventListener("click", () => {
-  const currentTheme = document.body.classList.contains("light-mode") ? "light" : "dark";
+  const currentTheme = document.body.classList.contains("light-mode")
+    ? "light"
+    : "dark";
   const newTheme = currentTheme === "light" ? "dark" : "light";
   setTheme(newTheme);
-  
+
   // Add a subtle animation effect
   themeToggle.style.transform = "scale(0.95)";
   setTimeout(() => {

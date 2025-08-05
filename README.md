@@ -1,4 +1,4 @@
-# CryptoFractal - Blockchain-Themed Video Player
+# Fractal - Blockchain-Themed Video Player
 
 A futuristic, blockchain-inspired video player showcasing fractal visualizations with dynamic color patterns. Built with vanilla HTML, CSS, and JavaScript featuring a cyberpunk aesthetic with neon green accents and terminal-style UI elements.
 
@@ -228,4 +228,4 @@ For issues, questions, or contributions, please refer to the project repository 
 
 ---
 
-**Built with ❤️ and blockchain inspiration** 🔗✨
+**Built with 💀 and blockchain inspiration** 🔗✨
